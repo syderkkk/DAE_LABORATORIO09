@@ -1,0 +1,13 @@
+@model AlumnoModel
+@{
+    ViewBag.Title = "Detalles del alumno";
+}
+
+<h2>Detalles del alumno</h2>
+
+@Html.Partial("_Datos")
+
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Volver", "Index", null, new { @class = "btn btn-default" })
+</p>

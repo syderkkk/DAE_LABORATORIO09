@@ -1,0 +1,14 @@
+@model AlumnoModel
+@{
+    ViewBag.Title = "Registrar alumno";
+}
+
+<h2>Registrar alumno</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.Partial("_Campos")
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-default" })
+}

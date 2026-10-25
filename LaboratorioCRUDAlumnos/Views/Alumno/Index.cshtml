@@ -1,0 +1,38 @@
+@model IEnumerable<AlumnoModel>
+@{
+    ViewBag.Title = "Alumnos";
+}
+
+<h2>Alumnos</h2>
+
+<p>@Html.ActionLink("Registrar alumno", "Create", null, new { @class = "btn btn-primary" })</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Edad</th>
+            <th>Correo</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var alumno in Model)
+        {
+            <tr>
+                <td>@alumno.Id</td>
+                <td>@alumno.Nombres</td>
+                <td>@alumno.Apellidos</td>
+                <td>@alumno.Edad</td>
+                <td>@alumno.Correo</td>
+                <td>
+                    @Html.ActionLink("Detalles", "Details", new { id = alumno.Id }) |
+                    @Html.ActionLink("Editar", "Edit", new { id = alumno.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = alumno.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

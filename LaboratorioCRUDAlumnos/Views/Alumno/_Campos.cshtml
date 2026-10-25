@@ -1,0 +1,10 @@
+@model AlumnoModel
+
+@foreach (var campo in new[] { "Nombres", "Apellidos", "Edad", "Correo" })
+{
+    <div class="form-group">
+        @Html.Label(campo)
+        @Html.TextBox(campo, null, new { @class = "form-control" })
+        @Html.ValidationMessage(campo, new { @class = "text-danger" })
+    </div>
+}
